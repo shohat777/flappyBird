@@ -1,16 +1,18 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-#wrapper{
+#wrapper {
+    position: relative;
     background-image: url('https://st4.depositphotos.com/11634452/39276/i/450/depositphotos_392760318-stock-photo-green-grass-texture-sport-background.jpg');
     width: 600px;
     height: 750px;
     margin: auto;
     border: 1px solid black;
     overflow: hidden;
-    img{
+
+    img {
         position: absolute;
         height: 4rem;
         width: 4rem;
@@ -18,25 +20,17 @@ body{
     }
 }
 
-#obstacles{
+.wall {
     width: 65px;
     height: 750px;
     background-color: black;
     position: relative;
-    left: 535px;
-    animation: obstacles 3s infinite linear;
-}
-@keyframes obstacles{
-    0%{ left:600px}
-    100%{left:-65px}
 }
 
-#hole{
-    width: 65px;
-    height: 12rem;
-    background-image: url('https://st4.depositphotos.com/11634452/39276/i/450/depositphotos_392760318-stock-photo-green-grass-texture-sport-background.jpg');
-    position: relative;
-    left: 600px;
-    top: -350px;
-    animation: obstacles 3s infinite linear;
+#topWall {
+    top: 0;
+}
+
+#bottomWall {
+    bottom: 0;
 }
