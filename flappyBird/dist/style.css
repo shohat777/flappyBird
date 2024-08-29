@@ -16,14 +16,13 @@ body {
   position: absolute;
   height: 4rem;
   width: 4rem;
-  left: 500px;
 }
 
 .wall {
   width: 65px;
   height: 750px;
   background-color: black;
-  position: relative;
+  position: absolute;
 }
 
 #topWall {
