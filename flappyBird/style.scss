@@ -1,17 +1,26 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://wallpapercave.com/wp/wp6956942.png");
+    background-size: cover;
 }
 
 #wrapper {
-    position: relative;
-    background-image: url('https://st4.depositphotos.com/11634452/39276/i/450/depositphotos_392760318-stock-photo-green-grass-texture-sport-background.jpg');
-    width: 600px;
-    height: 750px;
-    margin: auto;
-    border: 1px solid black;
-    overflow: hidden;
-
+ 
     img {
         position: absolute;
         height: 4rem;
@@ -34,4 +43,14 @@ body {
 
 #bottomWall {
     bottom: 0;
+}
+
+#startPage, #gamePage {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
 }

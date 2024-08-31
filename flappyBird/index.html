@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <div class="background-image">
+    
+    <div id="startPage">
+        <h1>Welcome to the Game!</h1>
+        <button id="startButton">Start Game</button>
+    </div>
+</div>
+    <div id="gamePage" style="display: none;">
     <div id="wrapper">
         <div class="wall" id="topWall"></div>
         <div class="wall" id="bottomWall"></div>
@@ -18,6 +26,11 @@
             <img src="https://i.ibb.co/4TywLGq/images-removebg-preview.png" alt="bird">
         </div>
     </div>
+    <div id="gameOverPage" style="display: none;">
+        <h1>Game Over!</h1>
+        <button id="restartButton">Restart Game</button>
+    </div>
+    <script src ="./dist/start.js"></script>
     <script src="./dist/obstacles.js"></script>
     <script src="./dist/bird.js"></script>
 </body>
