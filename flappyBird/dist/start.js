@@ -29,8 +29,8 @@ window.addEventListener("DOMContentLoaded", function () {
         currentState = "playing";
         render();
         startGame();
-        moveWalls(handleCollision);
-        moveWalls2(handleCollision);
+        moveWalls();
+        moveWalls2();
     });
     restartButton.addEventListener("click", function () {
         currentState = "start";
@@ -40,21 +40,17 @@ window.addEventListener("DOMContentLoaded", function () {
     function startGame() {
         collisionCount = 0;
         collisionCountDisplay.textContent = collisionCount.toString();
-        simulateCollision();
     }
-    function simulateCollision() {
-        if (currentState == "playing") {
-            collisionCount++;
-            collisionCountDisplay.textContent = collisionCount.toString();
-            if (collisionCount >= maxCollisions) {
-                gameOver();
-            }
-            else {
-                //simulate next collision//;
-                setTimeout(function () {
-                    simulateCollision();
-                }, 1000);
-            }
+    function restartGame() {
+        collisionCount = 0;
+        collisionCountDisplay.textContent = collisionCount.toString();
+    }
+    function handleCollision() {
+        collisionCount++;
+        collisionCountDisplay.textContent = collisionCount.toString();
+        if (collisionCount >= maxCollisions) {
+            currentState = "gameOver";
+            // Additional logic to stop the game (e.g., stop moving walls, stop bird movement, etc.)
         }
     }
     function gameOver() {
