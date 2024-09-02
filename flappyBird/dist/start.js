@@ -29,15 +29,15 @@ window.addEventListener("DOMContentLoaded", function () {
         currentState = "playing";
         render();
         startGame();
+        moveWalls(handleCollision);
+        moveWalls2(handleCollision);
     });
     restartButton.addEventListener("click", function () {
         currentState = "start";
-        collisionCount = 0;
-        collisionCountDisplay.textContent = collisionCountDisplay.toString();
+        restartGame();
         render();
     });
     function startGame() {
-        currentState = "playing";
         collisionCount = 0;
         collisionCountDisplay.textContent = collisionCount.toString();
         simulateCollision();

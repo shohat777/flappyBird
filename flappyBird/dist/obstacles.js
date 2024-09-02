@@ -1,49 +1,34 @@
-var topWall = document.getElementById("topWall");
-var bottomWall = document.getElementById("bottomWall");
 var wallSpeed = 5;
 var gapHeight = 250;
 var wallWidth = 65;
 var wrapperHeight = window.innerHeight;
-var gapPositionY = 0;
-function randomGapPosition() {
-    gapPositionY = Math.random() * (wrapperHeight - gapHeight);
-    topWall.style.height = gapPositionY + "px";
-    bottomWall.style.height = wrapperHeight - gapPositionY - gapHeight + "px";
+var gapPositionY1 = 0;
+var gapPositionY2 = 0;
+var gapPositionY3 = 0;
+function randomGapPosition(wrapperHeight, gapHeight) {
+    return Math.random() * (wrapperHeight - gapHeight);
 }
-function moveWalls() {
+function moveWalls(topWall, bottomWall, wallOffset, gapPositionY) {
+    if (wallOffset === void 0) { wallOffset = 0; }
     var wallX = window.innerWidth - wallWidth;
     var interval = setInterval(function () {
         wallX -= wallSpeed;
         if (wallX < -wallWidth) {
             wallX = window.innerWidth;
-            randomGapPosition();
+            gapPositionY = randomGapPosition(wrapperHeight, gapHeight);
+            topWall.style.height = gapPositionY + "px";
+            bottomWall.style.height = wrapperHeight - gapPositionY - gapHeight + "px";
         }
-        topWall.style.left = wallX + "px";
-        bottomWall.style.left = wallX + "px";
-        // checkCollision(wallX); add the function that Israel is working on if necessary.
+        topWall.style.left = wallX - wallOffset + "px";
+        bottomWall.style.left = wallX - wallOffset + "px";
     }, 15);
 }
-randomGapPosition();
-moveWalls();
+var topWall1 = document.getElementById("topWall");
+var bottomWall1 = document.getElementById("bottomWall");
 var topWall2 = document.getElementById("topWall2");
 var bottomWall2 = document.getElementById("bottomWall2");
-function randomGapPosition2() {
-    gapPositionY = Math.random() * (wrapperHeight - gapHeight);
-    topWall2.style.height = gapPositionY + "px";
-    bottomWall2.style.height = wrapperHeight - gapPositionY - gapHeight + "px";
-}
-function moveWalls2() {
-    var wallX = window.innerWidth - wallWidth;
-    var interval = setInterval(function () {
-        wallX -= wallSpeed;
-        if (wallX < -wallWidth) {
-            wallX = window.innerWidth;
-            randomGapPosition2();
-        }
-        topWall2.style.left = wallX - 370 + "px";
-        bottomWall2.style.left = wallX - 370 + "px";
-        // checkCollision(wallX); add the function that Israel is working on if necessary.
-    }, 15);
-}
-randomGapPosition2();
-moveWalls2();
+var topWall3 = document.getElementById("topWall3");
+var bottomWall3 = document.getElementById("bottomWall3");
+var wall1Interval = moveWalls(topWall1, bottomWall1, 0, gapPositionY1);
+var wall2Interval = moveWalls(topWall2, bottomWall2, -400, gapPositionY2);
+var wall3Interval = moveWalls(topWall3, bottomWall3, -800, gapPositionY3);
