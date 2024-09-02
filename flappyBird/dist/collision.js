@@ -17,10 +17,12 @@ function checkCollision() {
     var isCollidingWithBottomWall2 = isCollision(bottomWall2, img);
     if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2) {
         console.log("kkk");
-        // isColliding = true;
+        isColliding = true;
         console.log(isColliding);
         img.style.top = "90vh";
     }
+    if (!(isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2))
+        ;
 }
 setInterval(checkCollision, 100);
 var bird = 90;
