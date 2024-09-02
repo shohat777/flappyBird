@@ -40,6 +40,6 @@ const bottomWall2 = document.getElementById("bottomWall2") as HTMLElement;
 const topWall3 = document.getElementById("topWall3") as HTMLElement;
 const bottomWall3 = document.getElementById("bottomWall3") as HTMLElement;
 
-// let wall1Interval = moveWalls(topWall1, bottomWall1, 0, gapPositionY1);
-// let wall2Interval = moveWalls(topWall2, bottomWall2, -400, gapPositionY2);
-// let wall3Interval = moveWalls(topWall3, bottomWall3, -800, gapPositionY3);
+  let wall1Interval = moveWalls(topWall1, bottomWall1, 0, gapPositionY1);
+  let wall2Interval = moveWalls(topWall2, bottomWall2, -400, gapPositionY2);
+  let wall3Interval = moveWalls(topWall3, bottomWall3, -800, gapPositionY3);
