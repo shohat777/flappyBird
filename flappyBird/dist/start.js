@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-var obstacles_1 = require("./obstacles");
 var currentState = "start";
 var collisionCount = 0;
 var maxCollisions = 3;
@@ -32,8 +29,8 @@ window.addEventListener("DOMContentLoaded", function () {
         currentState = "playing";
         render();
         startGame();
-        obstacles_1.moveWalls();
-        obstacles_1.moveWalls2();
+        moveWalls();
+        moveWalls2();
     });
     restartButton.addEventListener("click", function () {
         currentState = "start";
