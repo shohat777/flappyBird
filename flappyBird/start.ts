@@ -1,4 +1,4 @@
-
+import { moveWalls, moveWalls2 } from './obstacles';
 
 type GameState = "start"|"playing"|"gameOver";
 
