@@ -4,6 +4,7 @@ var topWall2 = document.querySelector('#topWall2');
 var bottomWall2 = document.querySelector('#bottomWall2');
 var img = document.querySelector('img');
 var isColliding = false;
+console.log(isColliding);
 function isCollision(element1, element2) {
     var rect1 = element1.getBoundingClientRect();
     var rect2 = element2.getBoundingClientRect();
@@ -15,11 +16,10 @@ function checkCollision() {
     var isCollidingWithTopWall2 = isCollision(topWall2, img);
     var isCollidingWithBottomWall2 = isCollision(bottomWall2, img);
     if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2) {
-        if (!isColliding) {
-            console.log("kkk");
-            isColliding = true;
-            img.style.top = "90vh";
-        }
+        console.log("kkk");
+        // isColliding = true;
+        console.log(isColliding);
+        img.style.top = "90vh";
     }
 }
 setInterval(checkCollision, 100);

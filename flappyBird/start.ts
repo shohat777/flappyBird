@@ -1,4 +1,5 @@
 
+
 type GameState = "start"|"playing"|"gameOver";
 
 let currentState: GameState = "start";
@@ -33,19 +34,19 @@ function render() {
 startButton.addEventListener("click", () => {
     currentState = "playing"; 
     render(); 
-    startGame(); 
+    startGame();
+    moveWalls(handleCollision);
+    moveWalls2(handleCollision);
 });
 
 restartButton.addEventListener("click", () => {
     currentState = "start";
-    collisionCount = 0;
-    collisionCountDisplay.textContent = collisionCountDisplay.toString();
+    restartGame();
     render();
-})
+});
 
 
 function startGame() {
-    currentState = "playing";
     collisionCount = 0;
     collisionCountDisplay.textContent = collisionCount.toString();
     simulateCollision();

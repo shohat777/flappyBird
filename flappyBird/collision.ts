@@ -5,6 +5,8 @@ const bottomWall2 = document.querySelector('#bottomWall2') as HTMLDivElement;
 const img = document.querySelector('img') as HTMLImageElement;
 
 let isColliding = false;
+console.log(isColliding);
+
 
 function isCollision(element1, element2) {
     const rect1 = element1.getBoundingClientRect();
@@ -20,15 +22,15 @@ function checkCollision() {
     const isCollidingWithTopWall2 = isCollision(topWall2, img);
     const isCollidingWithBottomWall2 = isCollision(bottomWall2, img);
 
-    if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2) { 
-        if(!isColliding)      {
+    if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2) {
 
-            console.log("kkk");
-            isColliding = true;
-            img.style.top = "90vh";
-        }
+        console.log("kkk");
+        // isColliding = true;
+        console.log(isColliding);
         
-    } 
+        img.style.top = "90vh";
+
+    }
 
 }
 
@@ -82,7 +84,7 @@ setInterval(() => {
 
 function renderBird(bird: number) {
     // const img = document.querySelector('img') as HTMLImageElement;
-    if(!isColliding){
+    if (!isColliding) {
         img.style.top = bird + "vh";
     }
 
