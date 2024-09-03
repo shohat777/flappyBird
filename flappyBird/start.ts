@@ -1,5 +1,8 @@
-import { moveWalls, moveWalls2 } from './obstacles';
+<<<<<<< HEAD
 
+
+=======
+>>>>>>> 09623888e360529320653f587caf977e55c0ea0c
 type GameState = "start"|"playing"|"gameOver";
 
 let currentState: GameState = "start";

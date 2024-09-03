@@ -28,13 +28,11 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   startButton.addEventListener("click", function () {
-    currentState = "playing";
+    currentState = "start";
     render();
     startGame();
-    setTimeout(function () {
-      moveWalls(handleCollision);
-      moveWalls2(handleCollision);
-    }, 1000); // Start obstacle movement without delay
+    moveWalls();
+    moveWalls2();
   });
   restartButton.addEventListener("click", function () {
     currentState = "start";
