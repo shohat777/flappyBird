@@ -33,8 +33,7 @@ body, html {
 .wall {
     width: 65px;
     height: 750px;
-    background-color: black;
-    position: absolute;
+    background: linear-gradient(90deg, rgb(3, 194, 0) 0%, rgb(69, 158, 0) 100%);    position: absolute;
 }
 
 #topWall, #topWall2, #topWall3 {
