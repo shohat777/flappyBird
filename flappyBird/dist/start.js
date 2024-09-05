@@ -37,7 +37,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
     function startGame() {
         collisionCount = 0;
-        collisionCountDisplay.textContent = collisionCount.toString();
     }
     function restartGame() {
         collisionCount = 0;

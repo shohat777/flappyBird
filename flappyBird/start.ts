@@ -45,7 +45,7 @@ restartButton.addEventListener("click", () => {
 
 function startGame() {
     collisionCount = 0;
-    collisionCountDisplay.textContent = collisionCount.toString();
+    
 }
 
 function restartGame() {
