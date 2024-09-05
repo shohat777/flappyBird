@@ -3,10 +3,12 @@ let isColliding = false;
 let bird: number = 90;
 let isKeyPressed: boolean = false;
 
-const topWall = document.querySelector('#topWall') as HTMLDivElement;
-const bottomWall = document.querySelector('#bottomWall') as HTMLDivElement;
+const topWall1 = document.querySelector('#topWall') as HTMLDivElement;
+const bottomWall1 = document.querySelector('#bottomWall') as HTMLDivElement;
 const topWall2 = document.querySelector('#topWall2') as HTMLDivElement;
 const bottomWall2 = document.querySelector('#bottomWall2') as HTMLDivElement;
+const topWall3 = document.getElementById("topWall3") as HTMLElement;
+const bottomWall3 = document.getElementById("bottomWall3") as HTMLElement;
 const img = document.querySelector('img') as HTMLImageElement;
 
 console.log(isColliding);
@@ -23,12 +25,14 @@ function isCollision(element1, element2) {
 function checkCollision() {
     if (currentState !== "playing") return; // Prevent collision checking unless the game is playing
 
-    const isCollidingWithTopWall = isCollision(topWall, img);
-    const isCollidingWithBottomWall = isCollision(bottomWall, img);
+    const isCollidingWithTopWall = isCollision(topWall1, img);
+    const isCollidingWithBottomWall = isCollision(bottomWall1, img);
     const isCollidingWithTopWall2 = isCollision(topWall2, img);
     const isCollidingWithBottomWall2 = isCollision(bottomWall2, img);
+    const isCollidingWithBottomWall3 = isCollision(bottomWall3, img);
+    const isCollidingWithTopWall3 = isCollision(bottomWall3, img);
 
-    if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2) {
+    if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2 || isCollidingWithBottomWall3 || isCollidingWithTopWall3 ) {
         console.log("Collision detected");
         isColliding = true;
         img.style.top = "90vh";  // Move the bird to a default position after collision
