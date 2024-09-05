@@ -68,6 +68,4 @@ function startGame() {
     isColliding = false; // Reset collision flag
     console.log("Game started!");
 }
-// Example: Start the game by calling `startGame()`
-// You can trigger this function through a button click or some other event.
 (_a = document.querySelector('#startButton')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', startGame);

@@ -86,6 +86,4 @@ function startGame() {
     console.log("Game started!");
 }
 
-// Example: Start the game by calling `startGame()`
-// You can trigger this function through a button click or some other event.
 document.querySelector('#startButton')?.addEventListener('click', startGame);
