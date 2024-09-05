@@ -1,10 +1,14 @@
+let currentState: string = "ready";  // Initial game state
+let isColliding = false;
+let bird: number = 90;
+let isKeyPressed: boolean = false;
+
 const topWall = document.querySelector('#topWall') as HTMLDivElement;
 const bottomWall = document.querySelector('#bottomWall') as HTMLDivElement;
 const topWall2 = document.querySelector('#topWall2') as HTMLDivElement;
 const bottomWall2 = document.querySelector('#bottomWall2') as HTMLDivElement;
 const img = document.querySelector('img') as HTMLImageElement;
 
-let isColliding = false;
 console.log(isColliding);
 
 
@@ -17,6 +21,8 @@ function isCollision(element1, element2) {
 }
 
 function checkCollision() {
+    if (currentState !== "playing") return; // Prevent collision checking unless the game is playing
+
     const isCollidingWithTopWall = isCollision(topWall, img);
     const isCollidingWithBottomWall = isCollision(bottomWall, img);
     const isCollidingWithTopWall2 = isCollision(topWall2, img);
@@ -34,10 +40,6 @@ function checkCollision() {
 
 setInterval(checkCollision, 100);
 
-let bird: number = 90;
-let isKeyPressed: boolean = false;
-
-const wrapper = document.querySelector('#wrapper') as HTMLDivElement;
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowUp') {
@@ -55,35 +57,35 @@ document.addEventListener('keyup', (event) => {
     }
 });
 
+function renderBird(bird: number) {
+    if (!isColliding) {
+        img.style.top = bird + "vh";
+    }
+}
 
 setInterval(() => {
+    if (currentState !== "playing") return; // Prevent bird movement unless the game is playing
+
     if (isKeyPressed) {
         bird--;
-        if (bird < 10) {
-            bird = 10;
-        }
+        if (bird < 10) bird = 10;
     } else {
         bird++;
-        if (bird > 90) {
-            bird = 90;
-        }
+        if (bird > 90) bird = 90;
     }
-
 
     renderBird(bird);
 }, 10);
 
 
-
-
-
-
-function renderBird(bird: number) {
-    // const img = document.querySelector('img') as HTMLImageElement;
-    if (!isColliding) {
-        img.style.top = bird + "vh";
-    }
-
-
-
+// Function to start the game
+function startGame() {
+    currentState = "playing";  // Set game state to 'playing'
+    bird = 90;  // Reset bird position
+    isColliding = false;  // Reset collision flag
+    console.log("Game started!");
 }
+
+// Example: Start the game by calling `startGame()`
+// You can trigger this function through a button click or some other event.
+document.querySelector('#startButton')?.addEventListener('click', startGame);
