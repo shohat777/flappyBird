@@ -17,6 +17,9 @@ function moveWalls(topWall, bottomWall, wallOffset, gapPositionY) {
     wallOffset = 0;
   }
 
+  gapPositionY = randomGapPosition(wrapperHeight, gapHeight);
+  topWall.style.height = gapPositionY + "px";
+  bottomWall.style.height = wrapperHeight - gapPositionY - gapHeight + "px";
   var wallX = window.innerWidth - wallWidth;
   var interval = setInterval(function () {
     wallX -= wallSpeed;

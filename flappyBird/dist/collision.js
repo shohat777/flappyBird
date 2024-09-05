@@ -16,13 +16,13 @@ function checkCollision() {
     var isCollidingWithTopWall2 = isCollision(topWall2, img);
     var isCollidingWithBottomWall2 = isCollision(bottomWall2, img);
     if (isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2) {
-        console.log("kkk");
+        console.log("Collision detected");
         isColliding = true;
-        console.log(isColliding);
-        img.style.top = "90vh";
+        img.style.top = "90vh"; // Move the bird to a default position after collision
     }
-    if (!(isCollidingWithTopWall || isCollidingWithBottomWall || isCollidingWithTopWall2 || isCollidingWithBottomWall2))
-        ;
+    else {
+        isColliding = false; // Reset the collision flag when no collisions are detected
+    }
 }
 setInterval(checkCollision, 100);
 var bird = 90;

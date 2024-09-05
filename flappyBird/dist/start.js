@@ -29,8 +29,6 @@ window.addEventListener("DOMContentLoaded", function () {
         currentState = "playing";
         render();
         startGame();
-        moveWalls();
-        moveWalls2();
     });
     restartButton.addEventListener("click", function () {
         currentState = "start";
