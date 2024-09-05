@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function () {
         collisionCount = 0;
         collisionCountDisplay.textContent = collisionCount.toString();
     }
-    function handleCollision() {
+    function checkCollision() {
         collisionCount++;
         collisionCountDisplay.textContent = collisionCount.toString();
         if (collisionCount >= maxCollisions) {
